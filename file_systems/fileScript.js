@@ -14,8 +14,11 @@ import fs from 'fs'
 // })
 
 // ************** create and remove directories***********
+const backDirectories = fs.readdirSync('../')
 const directory = fs.readdirSync('./')
-// console.log("directory files: ", directory)
+console.log("directory files: ", directory)
+console.log("backDirectories files: ", backDirectories)
+
 if (directory.includes("newfolder")) {
   fs.unlink("./newfolder/writtenfile.txt", () => {
     fs.rmdirSync("newfolder")
