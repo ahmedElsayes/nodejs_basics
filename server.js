@@ -16,11 +16,22 @@ import fs from 'fs'
 //   readableStream.pipe(res)
 // })
 
-// Forht lesson in streaming html pages **************
+// Forth lesson in streaming html pages **************
+// const server = http.createServer((req, res) => {
+//   const readableStream = fs.createReadStream('./webpage/index.html', 'utf8')
+//   res.writeHead(200, {'Content-Type': 'text/html'})
+//   readableStream.pipe(res)
+// })
+
+// Fivth lesson in streaming JSON data **************
 const server = http.createServer((req, res) => {
-  const readableStream = fs.createReadStream('./webpage/index.html', 'utf8')
-  res.writeHead(200, {'Content-Type': 'text/html'})
-  readableStream.pipe(res)
+  const sampleData = {
+    name: "Arab Technologists",
+    cotent: "Teach technology in arabic",
+    aim: "Competent arab youth in tech"
+  }
+  res.writeHead(200, {'Content-Type': 'application/json'})
+  res.end(JSON.stringify(sampleData))
 })
 
 server.listen(3000, '127.0.0.1')
