@@ -7,12 +7,19 @@ import fs from 'fs'
 // })
 
 // Third lesson in streams **************
+// const server = http.createServer((req, res) => {
+//   const readableStream = fs.createReadStream('./sampledata/index.txt', 'utf8')
+
+//   console.log("request from: ", req.url)
+//   res.writeHead(200, {'Content-Type': 'text/plain'})
+
+//   readableStream.pipe(res)
+// })
+
+// Forht lesson in streaming html pages **************
 const server = http.createServer((req, res) => {
-  const readableStream = fs.createReadStream('./sampledata/index.txt', 'utf8')
-
-  console.log("request from: ", req.url)
-  res.writeHead(200, {'Content-Type': 'text/plain'})
-
+  const readableStream = fs.createReadStream('./webpage/index.html', 'utf8')
+  res.writeHead(200, {'Content-Type': 'text/html'})
   readableStream.pipe(res)
 })
 
