@@ -16,3 +16,7 @@ readableStream.on('data', (chunk) => {
   const addedline = '\n' + "**********Separating line**********" + '\n'
   writableStream.write(chunk+addedline)
 })
+
+// Third lesson **************
+// alternatively use pipe(), then:
+// readableStream.pipe(writableStream)
