@@ -1,0 +1,3 @@
+/node_modules
+sampledata/*.csv
+sampledata/*.json
